@@ -24,301 +24,6 @@
       <rd:DataSourceID>7e0a305a-b45d-4bfb-8025-a83c07cbeea8</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="CompanyName">
-          <DataField>CompanyName</DataField>
-        </Field>
-        <Field Name="CompanyName2">
-          <DataField>CompanyName2</DataField>
-        </Field>
-        <Field Name="CompanyAddress">
-          <DataField>CompanyAddress</DataField>
-        </Field>
-        <Field Name="ComPANNo">
-          <DataField>ComPANNo</DataField>
-        </Field>
-        <Field Name="ComWebSite">
-          <DataField>ComWebSite</DataField>
-        </Field>
-        <Field Name="Email">
-          <DataField>Email</DataField>
-        </Field>
-        <Field Name="PhoneNo">
-          <DataField>PhoneNo</DataField>
-        </Field>
-        <Field Name="GSTIN">
-          <DataField>GSTIN</DataField>
-        </Field>
-        <Field Name="txtcomment">
-          <DataField>txtcomment</DataField>
-        </Field>
-        <Field Name="txtcommentNote">
-          <DataField>txtcommentNote</DataField>
-        </Field>
-        <Field Name="txtVendorComment">
-          <DataField>txtVendorComment</DataField>
-        </Field>
-        <Field Name="PayTerms">
-          <DataField>PayTerms</DataField>
-        </Field>
-        <Field Name="DrugLigNo">
-          <DataField>DrugLigNo</DataField>
-        </Field>
-        <Field Name="LocationAdd">
-          <DataField>LocationAdd</DataField>
-        </Field>
-        <Field Name="LocationEmail">
-          <DataField>LocationEmail</DataField>
-        </Field>
-        <Field Name="LocationPhoneNo">
-          <DataField>LocationPhoneNo</DataField>
-        </Field>
-        <Field Name="LocationGSTIN">
-          <DataField>LocationGSTIN</DataField>
-        </Field>
-        <Field Name="LocationWebsite">
-          <DataField>LocationWebsite</DataField>
-        </Field>
-        <Field Name="Document_Type">
-          <DataField>Document_Type</DataField>
-        </Field>
-        <Field Name="PurchInvNo">
-          <DataField>PurchInvNo</DataField>
-        </Field>
-        <Field Name="PurchInvPostingDate">
-          <DataField>PurchInvPostingDate</DataField>
-        </Field>
-        <Field Name="Order_Date">
-          <DataField>Order_Date</DataField>
-        </Field>
-        <Field Name="Status">
-          <DataField>Status</DataField>
-        </Field>
-        <Field Name="SystemCreatedBy">
-          <DataField>SystemCreatedBy</DataField>
-        </Field>
-        <Field Name="SystemModifiedBy">
-          <DataField>SystemModifiedBy</DataField>
-        </Field>
-        <Field Name="ApprovedBy">
-          <DataField>ApprovedBy</DataField>
-        </Field>
-        <Field Name="CreatedBy">
-          <DataField>CreatedBy</DataField>
-        </Field>
-        <Field Name="SelltoCustomerNo">
-          <DataField>SelltoCustomerNo</DataField>
-        </Field>
-        <Field Name="SupplierAdd">
-          <DataField>SupplierAdd</DataField>
-        </Field>
-        <Field Name="SupplierPhoneNo">
-          <DataField>SupplierPhoneNo</DataField>
-        </Field>
-        <Field Name="SupplierName">
-          <DataField>SupplierName</DataField>
-        </Field>
-        <Field Name="IGSTRsAmount_Var">
-          <DataField>IGSTRsAmount_Var</DataField>
-        </Field>
-        <Field Name="IGSTRsAmount_VarFormat">
-          <DataField>IGSTRsAmount_VarFormat</DataField>
-        </Field>
-        <Field Name="CGSTRsAmount_Var">
-          <DataField>CGSTRsAmount_Var</DataField>
-        </Field>
-        <Field Name="CGSTRsAmount_VarFormat">
-          <DataField>CGSTRsAmount_VarFormat</DataField>
-        </Field>
-        <Field Name="SGSTRsAmount_Var">
-          <DataField>SGSTRsAmount_Var</DataField>
-        </Field>
-        <Field Name="SGSTRsAmount_VarFormat">
-          <DataField>SGSTRsAmount_VarFormat</DataField>
-        </Field>
-        <Field Name="SupplierEmail">
-          <DataField>SupplierEmail</DataField>
-        </Field>
-        <Field Name="SupplierGSTIN">
-          <DataField>SupplierGSTIN</DataField>
-        </Field>
-        <Field Name="OrderaddGSTIN">
-          <DataField>OrderaddGSTIN</DataField>
-        </Field>
-        <Field Name="DelTerms">
-          <DataField>DelTerms</DataField>
-        </Field>
-        <Field Name="SupplierPANNo">
-          <DataField>SupplierPANNo</DataField>
-        </Field>
-        <Field Name="LocationName">
-          <DataField>LocationName</DataField>
-        </Field>
-        <Field Name="AmtWords">
-          <DataField>AmtWords</DataField>
-        </Field>
-        <Field Name="TotalAmttoVendor">
-          <DataField>TotalAmttoVendor</DataField>
-        </Field>
-        <Field Name="TotalAmttoVendorFormat">
-          <DataField>TotalAmttoVendorFormat</DataField>
-        </Field>
-        <Field Name="txtPurchaseHeader">
-          <DataField>txtPurchaseHeader</DataField>
-        </Field>
-        <Field Name="TotalTDS">
-          <DataField>TotalTDS</DataField>
-        </Field>
-        <Field Name="TotalTDSFormat">
-          <DataField>TotalTDSFormat</DataField>
-        </Field>
-        <Field Name="TotalGSTAmount">
-          <DataField>TotalGSTAmount</DataField>
-        </Field>
-        <Field Name="TotalGSTAmountFormat">
-          <DataField>TotalGSTAmountFormat</DataField>
-        </Field>
-        <Field Name="Currency_Code">
-          <DataField>Currency_Code</DataField>
-        </Field>
-        <Field Name="CompInfoPicture">
-          <DataField>CompInfoPicture</DataField>
-        </Field>
-        <Field Name="DraftPicture">
-          <DataField>DraftPicture</DataField>
-        </Field>
-        <Field Name="LastAEdt">
-          <DataField>LastAEdt</DataField>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
-        <Field Name="ExttxtDesc">
-          <DataField>ExttxtDesc</DataField>
-        </Field>
-        <Field Name="Line_No_">
-          <DataField>Line_No_</DataField>
-        </Field>
-        <Field Name="UOM">
-          <DataField>UOM</DataField>
-        </Field>
-        <Field Name="HSN_SAC_Code">
-          <DataField>HSN_SAC_Code</DataField>
-        </Field>
-        <Field Name="Quantity">
-          <DataField>Quantity</DataField>
-        </Field>
-        <Field Name="QuantityFormat">
-          <DataField>QuantityFormat</DataField>
-        </Field>
-        <Field Name="Direct_Unit_Cost">
-          <DataField>Direct_Unit_Cost</DataField>
-        </Field>
-        <Field Name="Direct_Unit_CostFormat">
-          <DataField>Direct_Unit_CostFormat</DataField>
-        </Field>
-        <Field Name="freeQty">
-          <DataField>freeQty</DataField>
-        </Field>
-        <Field Name="freeQtyFormat">
-          <DataField>freeQtyFormat</DataField>
-        </Field>
-        <Field Name="Line_Amount">
-          <DataField>Line_Amount</DataField>
-        </Field>
-        <Field Name="Line_AmountFormat">
-          <DataField>Line_AmountFormat</DataField>
-        </Field>
-        <Field Name="Line_Discount__">
-          <DataField>Line_Discount__</DataField>
-        </Field>
-        <Field Name="Line_Discount__Format">
-          <DataField>Line_Discount__Format</DataField>
-        </Field>
-        <Field Name="IGSTRatePercnt_Var">
-          <DataField>IGSTRatePercnt_Var</DataField>
-        </Field>
-        <Field Name="IGSTRatePercnt_VarFormat">
-          <DataField>IGSTRatePercnt_VarFormat</DataField>
-        </Field>
-        <Field Name="CGSTRatePercnt_Var">
-          <DataField>CGSTRatePercnt_Var</DataField>
-        </Field>
-        <Field Name="CGSTRatePercnt_VarFormat">
-          <DataField>CGSTRatePercnt_VarFormat</DataField>
-        </Field>
-        <Field Name="SGSTRatePercnt_Var">
-          <DataField>SGSTRatePercnt_Var</DataField>
-        </Field>
-        <Field Name="SGSTRatePercnt_VarFormat">
-          <DataField>SGSTRatePercnt_VarFormat</DataField>
-        </Field>
-        <Field Name="Line_Discount_Amount">
-          <DataField>Line_Discount_Amount</DataField>
-        </Field>
-        <Field Name="Line_Discount_AmountFormat">
-          <DataField>Line_Discount_AmountFormat</DataField>
-        </Field>
-        <Field Name="Inv__Discount_Amount">
-          <DataField>Inv__Discount_Amount</DataField>
-        </Field>
-        <Field Name="Inv__Discount_AmountFormat">
-          <DataField>Inv__Discount_AmountFormat</DataField>
-        </Field>
-        <Field Name="Amount">
-          <DataField>Amount</DataField>
-        </Field>
-        <Field Name="AmountFormat">
-          <DataField>AmountFormat</DataField>
-        </Field>
-        <Field Name="SNo">
-          <DataField>SNo</DataField>
-        </Field>
-        <Field Name="decGSTPer">
-          <DataField>decGSTPer</DataField>
-        </Field>
-        <Field Name="decGSTPerFormat">
-          <DataField>decGSTPerFormat</DataField>
-        </Field>
-        <Field Name="ItemCode">
-          <DataField>ItemCode</DataField>
-        </Field>
-        <Field Name="LineGSTAmount">
-          <DataField>LineGSTAmount</DataField>
-        </Field>
-        <Field Name="LineGSTAmountFormat">
-          <DataField>LineGSTAmountFormat</DataField>
-        </Field>
-        <Field Name="Warrnty">
-          <DataField>Warrnty</DataField>
-        </Field>
-        <Field Name="Parts">
-          <DataField>Parts</DataField>
-        </Field>
-        <Field Name="YOY_Amount">
-          <DataField>YOY_Amount</DataField>
-        </Field>
-        <Field Name="YOY_AmountFormat">
-          <DataField>YOY_AmountFormat</DataField>
-        </Field>
-        <Field Name="ModelName">
-          <DataField>ModelName</DataField>
-        </Field>
-        <Field Name="DeliveryTerms">
-          <DataField>DeliveryTerms</DataField>
-        </Field>
-        <Field Name="PaymentTerm">
-          <DataField>PaymentTerm</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -4444,12 +4149,6 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -4546,4 +4245,299 @@ Public Function SetData(NewData as Object,Group as integer)
 End Function</Code>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CompanyName2">
+          <DataField>CompanyName2</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="ComPANNo">
+          <DataField>ComPANNo</DataField>
+        </Field>
+        <Field Name="ComWebSite">
+          <DataField>ComWebSite</DataField>
+        </Field>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+        </Field>
+        <Field Name="PhoneNo">
+          <DataField>PhoneNo</DataField>
+        </Field>
+        <Field Name="GSTIN">
+          <DataField>GSTIN</DataField>
+        </Field>
+        <Field Name="txtcomment">
+          <DataField>txtcomment</DataField>
+        </Field>
+        <Field Name="txtcommentNote">
+          <DataField>txtcommentNote</DataField>
+        </Field>
+        <Field Name="txtVendorComment">
+          <DataField>txtVendorComment</DataField>
+        </Field>
+        <Field Name="PayTerms">
+          <DataField>PayTerms</DataField>
+        </Field>
+        <Field Name="DrugLigNo">
+          <DataField>DrugLigNo</DataField>
+        </Field>
+        <Field Name="LocationAdd">
+          <DataField>LocationAdd</DataField>
+        </Field>
+        <Field Name="LocationEmail">
+          <DataField>LocationEmail</DataField>
+        </Field>
+        <Field Name="LocationPhoneNo">
+          <DataField>LocationPhoneNo</DataField>
+        </Field>
+        <Field Name="LocationGSTIN">
+          <DataField>LocationGSTIN</DataField>
+        </Field>
+        <Field Name="LocationWebsite">
+          <DataField>LocationWebsite</DataField>
+        </Field>
+        <Field Name="Document_Type">
+          <DataField>Document_Type</DataField>
+        </Field>
+        <Field Name="PurchInvNo">
+          <DataField>PurchInvNo</DataField>
+        </Field>
+        <Field Name="PurchInvPostingDate">
+          <DataField>PurchInvPostingDate</DataField>
+        </Field>
+        <Field Name="Order_Date">
+          <DataField>Order_Date</DataField>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+        </Field>
+        <Field Name="SystemCreatedBy">
+          <DataField>SystemCreatedBy</DataField>
+        </Field>
+        <Field Name="SystemModifiedBy">
+          <DataField>SystemModifiedBy</DataField>
+        </Field>
+        <Field Name="ApprovedBy">
+          <DataField>ApprovedBy</DataField>
+        </Field>
+        <Field Name="CreatedBy">
+          <DataField>CreatedBy</DataField>
+        </Field>
+        <Field Name="SelltoCustomerNo">
+          <DataField>SelltoCustomerNo</DataField>
+        </Field>
+        <Field Name="SupplierAdd">
+          <DataField>SupplierAdd</DataField>
+        </Field>
+        <Field Name="SupplierPhoneNo">
+          <DataField>SupplierPhoneNo</DataField>
+        </Field>
+        <Field Name="SupplierName">
+          <DataField>SupplierName</DataField>
+        </Field>
+        <Field Name="IGSTRsAmount_Var">
+          <DataField>IGSTRsAmount_Var</DataField>
+        </Field>
+        <Field Name="IGSTRsAmount_VarFormat">
+          <DataField>IGSTRsAmount_VarFormat</DataField>
+        </Field>
+        <Field Name="CGSTRsAmount_Var">
+          <DataField>CGSTRsAmount_Var</DataField>
+        </Field>
+        <Field Name="CGSTRsAmount_VarFormat">
+          <DataField>CGSTRsAmount_VarFormat</DataField>
+        </Field>
+        <Field Name="SGSTRsAmount_Var">
+          <DataField>SGSTRsAmount_Var</DataField>
+        </Field>
+        <Field Name="SGSTRsAmount_VarFormat">
+          <DataField>SGSTRsAmount_VarFormat</DataField>
+        </Field>
+        <Field Name="SupplierEmail">
+          <DataField>SupplierEmail</DataField>
+        </Field>
+        <Field Name="SupplierGSTIN">
+          <DataField>SupplierGSTIN</DataField>
+        </Field>
+        <Field Name="OrderaddGSTIN">
+          <DataField>OrderaddGSTIN</DataField>
+        </Field>
+        <Field Name="DelTerms">
+          <DataField>DelTerms</DataField>
+        </Field>
+        <Field Name="SupplierPANNo">
+          <DataField>SupplierPANNo</DataField>
+        </Field>
+        <Field Name="LocationName">
+          <DataField>LocationName</DataField>
+        </Field>
+        <Field Name="AmtWords">
+          <DataField>AmtWords</DataField>
+        </Field>
+        <Field Name="TotalAmttoVendor">
+          <DataField>TotalAmttoVendor</DataField>
+        </Field>
+        <Field Name="TotalAmttoVendorFormat">
+          <DataField>TotalAmttoVendorFormat</DataField>
+        </Field>
+        <Field Name="txtPurchaseHeader">
+          <DataField>txtPurchaseHeader</DataField>
+        </Field>
+        <Field Name="TotalTDS">
+          <DataField>TotalTDS</DataField>
+        </Field>
+        <Field Name="TotalTDSFormat">
+          <DataField>TotalTDSFormat</DataField>
+        </Field>
+        <Field Name="TotalGSTAmount">
+          <DataField>TotalGSTAmount</DataField>
+        </Field>
+        <Field Name="TotalGSTAmountFormat">
+          <DataField>TotalGSTAmountFormat</DataField>
+        </Field>
+        <Field Name="Currency_Code">
+          <DataField>Currency_Code</DataField>
+        </Field>
+        <Field Name="CompInfoPicture">
+          <DataField>CompInfoPicture</DataField>
+        </Field>
+        <Field Name="DraftPicture">
+          <DataField>DraftPicture</DataField>
+        </Field>
+        <Field Name="LastAEdt">
+          <DataField>LastAEdt</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="ExttxtDesc">
+          <DataField>ExttxtDesc</DataField>
+        </Field>
+        <Field Name="Line_No_">
+          <DataField>Line_No_</DataField>
+        </Field>
+        <Field Name="UOM">
+          <DataField>UOM</DataField>
+        </Field>
+        <Field Name="HSN_SAC_Code">
+          <DataField>HSN_SAC_Code</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="Direct_Unit_Cost">
+          <DataField>Direct_Unit_Cost</DataField>
+        </Field>
+        <Field Name="Direct_Unit_CostFormat">
+          <DataField>Direct_Unit_CostFormat</DataField>
+        </Field>
+        <Field Name="freeQty">
+          <DataField>freeQty</DataField>
+        </Field>
+        <Field Name="freeQtyFormat">
+          <DataField>freeQtyFormat</DataField>
+        </Field>
+        <Field Name="Line_Amount">
+          <DataField>Line_Amount</DataField>
+        </Field>
+        <Field Name="Line_AmountFormat">
+          <DataField>Line_AmountFormat</DataField>
+        </Field>
+        <Field Name="Line_Discount__">
+          <DataField>Line_Discount__</DataField>
+        </Field>
+        <Field Name="Line_Discount__Format">
+          <DataField>Line_Discount__Format</DataField>
+        </Field>
+        <Field Name="IGSTRatePercnt_Var">
+          <DataField>IGSTRatePercnt_Var</DataField>
+        </Field>
+        <Field Name="IGSTRatePercnt_VarFormat">
+          <DataField>IGSTRatePercnt_VarFormat</DataField>
+        </Field>
+        <Field Name="CGSTRatePercnt_Var">
+          <DataField>CGSTRatePercnt_Var</DataField>
+        </Field>
+        <Field Name="CGSTRatePercnt_VarFormat">
+          <DataField>CGSTRatePercnt_VarFormat</DataField>
+        </Field>
+        <Field Name="SGSTRatePercnt_Var">
+          <DataField>SGSTRatePercnt_Var</DataField>
+        </Field>
+        <Field Name="SGSTRatePercnt_VarFormat">
+          <DataField>SGSTRatePercnt_VarFormat</DataField>
+        </Field>
+        <Field Name="Line_Discount_Amount">
+          <DataField>Line_Discount_Amount</DataField>
+        </Field>
+        <Field Name="Line_Discount_AmountFormat">
+          <DataField>Line_Discount_AmountFormat</DataField>
+        </Field>
+        <Field Name="Inv__Discount_Amount">
+          <DataField>Inv__Discount_Amount</DataField>
+        </Field>
+        <Field Name="Inv__Discount_AmountFormat">
+          <DataField>Inv__Discount_AmountFormat</DataField>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+        </Field>
+        <Field Name="AmountFormat">
+          <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="SNo">
+          <DataField>SNo</DataField>
+        </Field>
+        <Field Name="decGSTPer">
+          <DataField>decGSTPer</DataField>
+        </Field>
+        <Field Name="decGSTPerFormat">
+          <DataField>decGSTPerFormat</DataField>
+        </Field>
+        <Field Name="ItemCode">
+          <DataField>ItemCode</DataField>
+        </Field>
+        <Field Name="LineGSTAmount">
+          <DataField>LineGSTAmount</DataField>
+        </Field>
+        <Field Name="LineGSTAmountFormat">
+          <DataField>LineGSTAmountFormat</DataField>
+        </Field>
+        <Field Name="Warrnty">
+          <DataField>Warrnty</DataField>
+        </Field>
+        <Field Name="Parts">
+          <DataField>Parts</DataField>
+        </Field>
+        <Field Name="YOY_Amount">
+          <DataField>YOY_Amount</DataField>
+        </Field>
+        <Field Name="YOY_AmountFormat">
+          <DataField>YOY_AmountFormat</DataField>
+        </Field>
+        <Field Name="ModelName">
+          <DataField>ModelName</DataField>
+        </Field>
+        <Field Name="DeliveryTerms">
+          <DataField>DeliveryTerms</DataField>
+        </Field>
+        <Field Name="PaymentTerm">
+          <DataField>PaymentTerm</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>

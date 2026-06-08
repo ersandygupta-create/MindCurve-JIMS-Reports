@@ -160,7 +160,7 @@ report 50012 "Purchase Order Print"
             {
 
             }
-            column(CompInfoPicture; CompanyInformation.Picture)
+            column(CompInfoPicture; CompInfo.Picture)
             {
             }
             column(DraftPicture; CompInfo.DraftImage)
