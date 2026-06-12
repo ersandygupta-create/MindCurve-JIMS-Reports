@@ -4,7 +4,7 @@ report 50012 "Purchase Order Print"
     Caption = 'Purchase Order Print';
     UsageCategory = ReportsAndAnalysis;
     DefaultLayout = RDLC;
-    RDLCLayout = './src/reports/Rpt50012PurchaseOrder.rdl';
+    RDLCLayout = './src/reports/Rpt50012.PurchaseOrderPrint.rdl';
     PreviewMode = PrintLayout;
 
     dataset
@@ -12,6 +12,7 @@ report 50012 "Purchase Order Print"
         dataitem(PurchaseHeader; "Purchase Header")
         {
             DataItemTableView = SORTING("Document Type", "No.");
+
             RequestFilterFields = "No.", "Buy-from Vendor No.";
             RequestFilterHeading = 'Purchase Order Print';
 
@@ -112,6 +113,7 @@ report 50012 "Purchase Order Print"
             column(SupplierName; SupplierName)
             {
             }
+
             column(IGSTRsAmount_Var; IGSTRsAmount_Var)
             {
             }

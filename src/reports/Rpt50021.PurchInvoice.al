@@ -1,8 +1,8 @@
-report 50021 "Purchase Invoice Print GST"
+report 50021 "Purchase Invoice"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
-    RDLCLayout = './src/reports/Rpt50021.PurchInvoiceGSTPrint.rdl';
+    RDLCLayout = './src/reports/Rpt50021.PurchInvoice.rdl';
 
     dataset
     {
@@ -19,6 +19,19 @@ report 50021 "Purchase Invoice Print GST"
             column(InvDiscountAmountCaption; InvDiscountAmountCaptionLbl)
             {
             }
+            column(LocationName; LocationName)
+            {
+            }
+            column(LocationAdd; LocationAdd)
+            {
+            }
+            column(LocationGSTIN; LocationGSTIN)
+            {
+            }
+            column(LocationPhone; LocationPhoneNo)
+            {
+            }
+
             dataitem(CopyLoop; Integer)
             {
                 DataItemTableView = sorting(Number);
@@ -95,6 +108,7 @@ report 50021 "Purchase Invoice Print GST"
                     column(VendorEmail; Vendor."E-Mail")
                     {
                     }
+
                     column(VendPANNo; Vendor."P.A.N. No.")
                     {
                     }
@@ -334,10 +348,14 @@ report 50021 "Purchase Invoice Print GST"
                         column(KKCessAmount; KKCessAmount)
                         {
                         }
+                        column(itemName; Description)
+                        {
+                        }
                         column(LineAmt_PurchInvLine; "Line Amount")
                         {
                             AutoFormatType = 1;
                         }
+
                         column(Desc_PurchInvLine; Description)
                         {
                         }
@@ -380,6 +398,9 @@ report 50021 "Purchase Invoice Print GST"
                         {
                         }
                         column(VATAmtText; VATAmountText)
+                        {
+                        }
+                        column(SNo; SNo)
                         {
                         }
                         column(SourceDocNo_PurchInvLine; 0)
@@ -530,6 +551,7 @@ report 50021 "Purchase Invoice Print GST"
                             {
                             }
 
+
                             trigger OnAfterGetRecord()
                             begin
                                 DimText := GetDimensionText(DimSetEntry2, Number, Continue);
@@ -543,12 +565,14 @@ report 50021 "Purchase Invoice Print GST"
                                     CurrReport.Break();
 
                                 DimSetEntry2.SetRange("Dimension Set ID", "Purch. Inv. Line"."Dimension Set ID");
+                                SNo := 0;
                             end;
 
                         }
 
                         trigger OnAfterGetRecord()
                         begin
+                            SNo += 1;
                             //ak
 
                             txtLedgerDescription := '';
@@ -874,6 +898,19 @@ report 50021 "Purchase Invoice Print GST"
                     SupplementaryText := SupplemenInvLbl;
 
                 PricesInclVATtxt := Format("Purch. Inv. Header"."Prices Including VAT");
+
+                // location logic Sandeep
+
+                recLocation.Reset();
+
+                recLocation.SetRange(Code, "Purch. Inv. Header"."Location Code");
+                if recLocation.find('-') then begin
+                    LocationName := recLocation.Name;
+                    LocationGSTIN := recLocation."GST Registration No.";
+                    LocationPhoneNo := recLocation."Phone No.";
+                    LocationAdd := recLocation.Address + ' '
+                    //+ recLocation."Address 2" + ',' + recLocation.City + ' ' + recLocation."State Code" + ' ' + recLocation."Country/Region Code";
+                end;
             end;
 
             trigger OnPreDataItem()
@@ -881,6 +918,7 @@ report 50021 "Purchase Invoice Print GST"
                 DocumentCaption();
             end;
         }
+
     }
 
     requestpage
@@ -989,6 +1027,8 @@ report 50021 "Purchase Invoice Print GST"
         OtherTaxesAmount: Decimal;
         ChargesAmount: Decimal;
         SupplementaryText: Text[30];
+        recLocation: Record Location;
+        LocationPhoneNo: Text[15];
         DocCaption: Text;
         LogInteractionEnable: Boolean;
         TotalSubTotal: Decimal;
@@ -999,6 +1039,7 @@ report 50021 "Purchase Invoice Print GST"
         KKCessAmount: Decimal;
         IsGSTApplicable: Boolean;
         CGSTAmt: Decimal;
+
         SGSTAmt: Decimal;
         IGSTAmt: Decimal;
         CessAmt: Decimal;
@@ -1016,6 +1057,7 @@ report 50021 "Purchase Invoice Print GST"
         TotalIncLbl: Label 'Total %1 Excl. Taxes', Comment = '%1 = Total Amount';
         SupplemenInvLbl: Label 'Supplementary Invoice';
         CompanyInfoPhoneNoCaptionLbl: Label 'Phone No.';
+        // LocationPhoneNo : Lable 'LocationPhoneNo';
         CompanyInfoEMailCaptionLbl: Label 'E-Mail';
         CompanyInfoHomePageCaptionLbl: Label 'Home Page';
         CompanyInfoVATRegistrationNoCaptionLbl: Label 'VAT Reg. No.';
@@ -1067,6 +1109,12 @@ report 50021 "Purchase Invoice Print GST"
         VendorBankIFSC: Code[20];
         VendorBankSWIFT: Code[20];
         VendorBankAccount: Record "Vendor Bank Account";
+        SNo: Integer;
+        Location: Record Location;
+        LocationName: Text[100];
+        LocationAdd: Text[250];
+        LocationGSTIN: Text[50];
+
 
     procedure InitializeRequest(NewNoOfCopies: Integer; NewShowInternalInfo: Boolean; NewLogInteraction: Boolean)
     begin
