@@ -2,7 +2,7 @@
   "id": "40b1ce5f-3e0d-444c-a0bd-c2ddc25f6d71",
   "name": "JIMS Reports",
   "publisher": "MindCurve",
-  "version": "1.0.0.0",
+  "version": "1.0.0.2",
   "brief": "JIMS Reports",
   "description": "Reports for JIMS",
   "privacyStatement": "https://MindCurve.in",
@@ -57,7 +57,7 @@
                 "id": "ede53059-43d1-450d-a3f6-7136a9649af5",
                 "name": "JIMS Integration",
                 "publisher":"MindCurve",
-                "version": "1.0.0.0"
+                "version": "1.0.0.1"
                 }
   ],
   "screenshots": [],

@@ -36,6 +36,9 @@ report 50030 "GRN Report Test Print"
             column(LocationAdd; LocationAdd)
             {
             }
+            column(LocationAdd2; LocationAdd2)
+            {
+            }
             column(LocationGSTIN; LocationGSTIN)
             {
             }
@@ -68,6 +71,9 @@ report 50030 "GRN Report Test Print"
             {
             }
             column(GSRDate; "Purch. Rcpt. Header"."Posting Date")
+            {
+            }
+            column(ChallanNo; ChallanNo)
             {
             }
             column(PONo; "Purch. Rcpt. Header"."Order No.")
@@ -206,6 +212,16 @@ report 50030 "GRN Report Test Print"
                         RecCompanyName := CompanyInformation.Name;
                 END;
 
+
+                //Shoeb
+                ChallanNo := '';
+                PurchHeader.Reset();
+                PurchHeader.SetRange("Document Type", PurchHeader."Document Type"::Order);
+                PurchHeader.SetRange("No.", "Purch. Rcpt. Header"."Order No.");
+
+                if PurchHeader.FindFirst() then
+                    ChallanNo := PurchHeader."Vendor Invoice No.";
+
                 // sandeep
 
                 txtdescruption := '';
@@ -217,6 +233,7 @@ report 50030 "GRN Report Test Print"
                 END;
 
                 LocationAdd := '';
+                LocationAdd2 := '';
                 LocationEmail := '';
                 LocationPhoneNo := '';
                 LocationGSTIN := '';
@@ -226,7 +243,9 @@ report 50030 "GRN Report Test Print"
                     Location.SETRANGE(Code, "Purch. Rcpt. Header"."Location Code");
                     IF Location.FINDFIRST THEN BEGIN
                         LocationName := Location.Name;
-                        LocationAdd := Location.Address + ', ' + Location."Address 2" + ', ' + Location.City + ', ' + FORMAT(Location."Post Code");
+                        LocationAdd := Location.Address + '';
+                        LocationAdd2 := Location."Address 2" + '';
+                        // + Location.City + ', ' + FORMAT(Location."Post Code");
                         LocationEmail := Location."E-Mail";
                         LocationPhoneNo := Location."Phone No.";
                         LocationGSTIN := Location."GST Registration No.";
@@ -295,12 +314,15 @@ report 50030 "GRN Report Test Print"
         LocationPhoneNo: Code[50];
         LocationGSTIN: Code[15];
         LocationWebsite: Text[200];
-        LocationAdd: Code[200];
+        LocationAdd: Text[200];
+        LocationAdd2: Text[100];
         RecCompanyName: Code[100];
         Amount: Decimal;
         FreeQTY: Integer;
         ChallanQty: Decimal;
         PurchLine: Record "Purchase Line";
+        ChallanNo: Code[30];
+        PurchHeader: Record "Purchase Header";
 
 }
 
