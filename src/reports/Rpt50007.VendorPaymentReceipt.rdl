@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-04-30T07:01:37.9179742Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-06-29T09:05:03.1196112Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -308,7 +308,7 @@ First(Fields!TotalPayment.Value), 1)</Hidden>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Parameters!DocType_VendLedgEntry1Caption.Value</Value>
+                                                    <Value>Type</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
@@ -401,8 +401,7 @@ First(Fields!TotalPayment.Value), 1)</Hidden>
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="Textbox20">
-                                            <rd:DefaultName>Textbox20</rd:DefaultName>
+                                          <Textbox Name="textbox99">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
@@ -423,12 +422,9 @@ First(Fields!TotalPayment.Value), 1)</Hidden>
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
+                                            <ZIndex>32</ZIndex>
                                             <Style>
-                                              <Border>
-                                                <Style>None</Style>
-                                              </Border>
                                               <VerticalAlign>Bottom</VerticalAlign>
-                                              <PaddingLeft>5pt</PaddingLeft>
                                               <PaddingRight>5pt</PaddingRight>
                                             </Style>
                                           </Textbox>
@@ -1281,19 +1277,19 @@ First(Fields!TotalPayment.Value), 1)</Hidden>
                                     <TablixCells>
                                       <TablixCell>
                                         <CellContents>
-                                          <Textbox Name="textbox11">
+                                          <Textbox Name="DocDate_VendLedgEntry">
+                                            <rd:DefaultName>DocDate_VendLedgEntry</rd:DefaultName>
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!PostingDate_VendLedgEntry1.Value</Value>
+                                                    <Value>=Fields!DocDate_VendLedgEntry.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
-                                                      <Format>d</Format>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -1302,7 +1298,6 @@ First(Fields!TotalPayment.Value), 1)</Hidden>
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
-                                            <ZIndex>7</ZIndex>
                                             <Style>
                                               <VerticalAlign>Top</VerticalAlign>
                                               <PaddingRight>5pt</PaddingRight>
@@ -1402,20 +1397,19 @@ First(Fields!TotalPayment.Value), 1)</Hidden>
                                       </TablixCell>
                                       <TablixCell>
                                         <CellContents>
-                                          <rd:Selected>true</rd:Selected>
-                                          <Textbox Name="DocDate_VendLedgEntry">
-                                            <rd:DefaultName>DocDate_VendLedgEntry</rd:DefaultName>
+                                          <Textbox Name="textbox11">
                                             <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>
                                                 <TextRuns>
                                                   <TextRun>
-                                                    <Value>=Fields!DocDate_VendLedgEntry.Value</Value>
+                                                    <Value>=Fields!PostingDate_VendLedgEntry1.Value</Value>
                                                     <Style>
                                                       <FontStyle>Normal</FontStyle>
                                                       <FontFamily>Segoe UI</FontFamily>
                                                       <FontSize>8pt</FontSize>
+                                                      <Format>d</Format>
                                                     </Style>
                                                   </TextRun>
                                                 </TextRuns>
@@ -1424,9 +1418,9 @@ First(Fields!TotalPayment.Value), 1)</Hidden>
                                                 </Style>
                                               </Paragraph>
                                             </Paragraphs>
+                                            <ZIndex>7</ZIndex>
                                             <Style>
                                               <VerticalAlign>Top</VerticalAlign>
-                                              <PaddingLeft>5pt</PaddingLeft>
                                               <PaddingRight>5pt</PaddingRight>
                                             </Style>
                                           </Textbox>
@@ -2892,9 +2886,9 @@ First(Fields!TotalPayment.Value), 1)</Hidden>
                 </Paragraph>
               </Paragraphs>
               <Top>3.51266cm</Top>
-              <Left>2.28161cm</Left>
+              <Left>1.13577cm</Left>
               <Height>13.7pt</Height>
-              <Width>10.19731cm</Width>
+              <Width>11.34315cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <VerticalAlign>Top</VerticalAlign>
@@ -2921,7 +2915,7 @@ First(Fields!TotalPayment.Value), 1)</Hidden>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>="EMail : " &amp; " " &amp; First(Fields!VenEmail.Value, "DataSet_Result")</Value>
+                      <Value>="E-Mail : " &amp; " " &amp; First(Fields!VenEmail.Value, "DataSet_Result")</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontFamily>Segoe UI</FontFamily>
@@ -2967,9 +2961,9 @@ First(Fields!TotalPayment.Value), 1)</Hidden>
                 </Paragraph>
               </Paragraphs>
               <Top>4.06652cm</Top>
-              <Left>2.28161cm</Left>
+              <Left>1.13577cm</Left>
               <Height>45.70214pt</Height>
-              <Width>10.19731cm</Width>
+              <Width>11.34315cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <VerticalAlign>Top</VerticalAlign>
@@ -3233,14 +3227,14 @@ First(Fields!TotalPayment.Value), 1)</Hidden>
                     </TextRun>
                   </TextRuns>
                   <Style>
-                    <TextAlign>Right</TextAlign>
+                    <TextAlign>Left</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <Top>1.37195in</Top>
+              <Top>1.35945in</Top>
               <Left>0.01077in</Left>
-              <Height>0.2in</Height>
-              <Width>0.86694in</Width>
+              <Height>0.2125in</Height>
+              <Width>0.43638in</Width>
               <ZIndex>12</ZIndex>
               <Style>
                 <Border>
@@ -3285,9 +3279,9 @@ First(Fields!TotalPayment.Value), 1)</Hidden>
                 </Paragraph>
               </Paragraphs>
               <Top>2.23574in</Top>
-              <Left>0.19158in</Left>
+              <Left>0in</Left>
               <Height>0.20739in</Height>
-              <Width>1.14125in</Width>
+              <Width>1.33283in</Width>
               <ZIndex>13</ZIndex>
               <Style>
                 <Border>
@@ -3319,9 +3313,9 @@ First(Fields!TotalPayment.Value), 1)</Hidden>
                 </Paragraph>
               </Paragraphs>
               <Top>2.44313in</Top>
-              <Left>0.19158in</Left>
+              <Left>0in</Left>
               <Height>0.22951in</Height>
-              <Width>6.95719in</Width>
+              <Width>7.14877in</Width>
               <ZIndex>14</ZIndex>
               <Style>
                 <Border>
@@ -3673,7 +3667,7 @@ First(Fields!TotalPayment.Value), 1)</Hidden>
                     <TextRun>
                       <Value>=Code.GetData(40,1)</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontFamily>Calibri</FontFamily>
                         <FontSize>8pt</FontSize>
                       </Style>
                     </TextRun>
@@ -3812,20 +3806,7 @@ First(Fields!TotalPayment.Value), 1)</Hidden>
                     <TextRun>
                       <Value>=Code.GetData(43,1)</Value>
                       <Style>
-                        <FontFamily>Segoe UI</FontFamily>
-                        <FontSize>8pt</FontSize>
-                        <Format>dd MMM yyyy</Format>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Code.GetData(44,1)</Value>
-                      <Style>
-                        <FontFamily>Segoe UI</FontFamily>
+                        <FontFamily>Calibri</FontFamily>
                         <FontSize>8pt</FontSize>
                         <Format>dd MMM yyyy</Format>
                       </Style>
@@ -3899,26 +3880,6 @@ First(Fields!TotalPayment.Value), 1)</Hidden>
                 <Border>
                   <Style>Solid</Style>
                 </Border>
-                <TopBorder>
-                  <Color>Black</Color>
-                  <Style>Solid</Style>
-                  <Width>1pt</Width>
-                </TopBorder>
-                <BottomBorder>
-                  <Color>Black</Color>
-                  <Style>Solid</Style>
-                  <Width>1pt</Width>
-                </BottomBorder>
-                <LeftBorder>
-                  <Color>Black</Color>
-                  <Style>Solid</Style>
-                  <Width>1pt</Width>
-                </LeftBorder>
-                <RightBorder>
-                  <Color>Black</Color>
-                  <Style>Solid</Style>
-                  <Width>1pt</Width>
-                </RightBorder>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -3955,26 +3916,6 @@ First(Fields!TotalPayment.Value), 1)</Hidden>
                 <Border>
                   <Style>Solid</Style>
                 </Border>
-                <TopBorder>
-                  <Color>Black</Color>
-                  <Style>Solid</Style>
-                  <Width>1pt</Width>
-                </TopBorder>
-                <BottomBorder>
-                  <Color>Black</Color>
-                  <Style>Solid</Style>
-                  <Width>1pt</Width>
-                </BottomBorder>
-                <LeftBorder>
-                  <Color>Black</Color>
-                  <Style>Solid</Style>
-                  <Width>1pt</Width>
-                </LeftBorder>
-                <RightBorder>
-                  <Color>Black</Color>
-                  <Style>Solid</Style>
-                  <Width>1pt</Width>
-                </RightBorder>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -4022,7 +3963,7 @@ First(Fields!TotalPayment.Value), 1)</Hidden>
               <Value>=First(Fields!CompanyPicture.Value, "DataSet_Result")</Value>
               <MIMEType>image/jpeg</MIMEType>
               <Sizing>FitProportional</Sizing>
-              <Top>0.46055cm</Top>
+              <Top>0.56639cm</Top>
               <Left>0.02736cm</Left>
               <Height>1.79299cm</Height>
               <Width>4.40667cm</Width>
@@ -4409,14 +4350,14 @@ End Function</Code>
         <Field Name="VendNo_VendLedgEntry">
           <DataField>VendNo_VendLedgEntry</DataField>
         </Field>
+        <Field Name="DocDate_VendLedgEntry">
+          <DataField>DocDate_VendLedgEntry</DataField>
+        </Field>
         <Field Name="VenBankAccountNo">
           <DataField>VenBankAccountNo</DataField>
         </Field>
         <Field Name="VenIFSCCode">
           <DataField>VenIFSCCode</DataField>
-        </Field>
-        <Field Name="DocDate_VendLedgEntry">
-          <DataField>DocDate_VendLedgEntry</DataField>
         </Field>
         <Field Name="LocationName">
           <DataField>LocationName</DataField>

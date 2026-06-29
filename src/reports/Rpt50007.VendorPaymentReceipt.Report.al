@@ -2,7 +2,7 @@ report 50007 "E3 Vendor - Payment Advice"
 {
     DefaultLayout = RDLC;
     UsageCategory = ReportsAndAnalysis;
-    RDLCLayout = './src/reports/Rpt50007.VendorPaymentReceipt.rdlc';
+    RDLCLayout = './src/reports/Rpt50007.VendorPaymentReceipt.rdl';
     Caption = 'Vendor - Payment Advice';
 
     dataset
@@ -57,15 +57,17 @@ report 50007 "E3 Vendor - Payment Advice"
                 {
                     //IncludeCaption = true;
                 }
+                column(DocDate_VendLedgEntry; Format("Vendor Ledger Entry"."Document Date"))
+                {
+                    //IncludeCaption = true;
+                }
                 column(VenBankAccountNo; VenBankAccountNo)
                 {
                 }
                 column(VenIFSCCode; VenIFSCCode)
                 {
                 }
-                column(DocDate_VendLedgEntry; Format("Vendor Ledger Entry"."Document Date"))
-                {
-                }
+
                 column(LocationName; LocationName)
                 {
                 }
@@ -216,7 +218,7 @@ report 50007 "E3 Vendor - Payment Advice"
                         DataItemLinkReference = DetailedVendorLedgEntry1;
                         DataItemTableView = SORTING("Entry No.");
                         RequestFilterFields = "Original Amt. (LCY)";
-                        column(PostingDate_VendLedgEntry1; Format("Posting Date"))
+                        column(PostingDate_VendLedgEntry1; Format("Document Date"))
                         {
                         }
                         column(DocType_VendLedgEntry1; "Document Type")
@@ -260,7 +262,10 @@ report 50007 "E3 Vendor - Payment Advice"
                         }
 
                         trigger OnAfterGetRecord()
+
                         begin
+                            Docdate := "Vendor Ledger Entry"."Document Date";
+
                             if "Entry No." = "Vendor Ledger Entry"."Entry No." then
                                 CurrReport.Skip;
 
@@ -328,7 +333,8 @@ report 50007 "E3 Vendor - Payment Advice"
                             IF PurchInvHdr.FindFirst() THEN begin
                                 PurchInvHdr.CalcFields(PurchInvHdr.Amount);
                                 decLineAmount := PurchInvHdr.Amount;
-                                // CalcStatistics.OnGetPurchInvHeaderTDSAmount(PurchInvHdr, decTDSAmount);
+                                CalcStatistics.OnGetPurchInvHeaderGSTAmount(PurchInvHdr, decGSTAmount);
+                                CalcStatistics.OnGetPurchInvHeaderTDSAmount(PurchInvHdr, decTDSAmount);
 
                                 decAmountLCYVLE := 0;
                                 vendorLedgerEntry.Reset();
@@ -440,17 +446,17 @@ report 50007 "E3 Vendor - Payment Advice"
                                     decAppliedGSTAmount += ABS(DetailedGSTLedgerEntry."GST Amount");
                                 until DetailedGSTLedgerEntry.Next() = 0;
 
-                            // decLineAmount := 0;
-                            // decGSTAmount := 0;
-                            // decTDSAmount := 0;
-                            // PurchInvHdr.Reset();
-                            // PurchInvHdr.SetRange("No.", VendLedgEntry2."Document No.");
-                            // PurchInvHdr.SetRange("Pay-to Vendor No.", VendLedgEntry2."Vendor No.");
-                            // IF PurchInvHdr.FindFirst() THEN begin
-                            //     CalcStatistics.GetPostedPurchInvStatisticsAmount(PurchInvHdr, decLineAmount);
-                            //     CalcStatistics.OnGetPurchInvHeaderGSTAmount(PurchInvHdr, decGSTAmount);
-                            //     CalcStatistics.OnGetPurchInvHeaderTDSAmount(PurchInvHdr, decTDSAmount);
-                            // end;
+                            decLineAmount := 0;
+                            decGSTAmount := 0;
+                            decTDSAmount := 0;
+                            PurchInvHdr.Reset();
+                            PurchInvHdr.SetRange("No.", VendLedgEntry2."Document No.");
+                            PurchInvHdr.SetRange("Pay-to Vendor No.", VendLedgEntry2."Vendor No.");
+                            IF PurchInvHdr.FindFirst() THEN begin
+                                CalcStatistics.GetPostedPurchInvStatisticsAmount(PurchInvHdr, decLineAmount);
+                                CalcStatistics.OnGetPurchInvHeaderGSTAmount(PurchInvHdr, decGSTAmount);
+                                CalcStatistics.OnGetPurchInvHeaderTDSAmount(PurchInvHdr, decTDSAmount);
+                            end;
                         end;
                     }
                 }
@@ -544,7 +550,7 @@ report 50007 "E3 Vendor - Payment Advice"
                 VendorBank.SetRange("Vendor No.", "Vendor No.");
                 if VendorBank.FindFirst() then
                     VenBankAccountNo := (VendorBank."Bank Account No.");
-                VenIFSCCode := (VendorBank."E3 IFSC Code");
+                VenIFSCCode := (VendorBank."Bank Clearing Code");
 
 
                 decTDSAmt := 0;
@@ -618,7 +624,7 @@ report 50007 "E3 Vendor - Payment Advice"
         Vend: Record Vendor;
         TotalVendorLedgerEntry: Record "Vendor Ledger Entry";
         PostedVoucher: Report "Posted Voucher";
-        //CalcStatistics: Codeunit "Calculate Statistics";
+        CalcStatistics: Codeunit "Calculate Statistics";
         FormatAddr: Codeunit "Format Address";
         ChequeNo: Code[60];
         ChequeDate: Date;
@@ -639,22 +645,22 @@ report 50007 "E3 Vendor - Payment Advice"
         PmtTolPmtCurr: Decimal;
         RemainingAmount: Decimal;
         TotalAppliedAmount: Decimal;
-        AmtCaptionLbl: label 'Applied Amount';
+        AmtCaptionLbl: label 'Applied Amt';
         CompanyInfoBankAccNoCaptionLbl: label 'Account No.';
         CompanyInfoBankNameCaptionLbl: label 'Bank';
         CompanyInfoGiroNoCaptionLbl: label 'Giro No.';
         CompanyInfoPhoneNoCaptionLbl: label 'Phone No.';
         CompanyInfoVATRegNoCaptionLbl: label 'GST Registration No.';
         ExternalDocNoCaptionLbl: label 'External Document No.';
-        GSTAmtLbl: label 'GST Amount';
-        NetAmtLbl: label 'Net Amount';
+        GSTAmtLbl: label 'GST Amt';
+        NetAmtLbl: label 'Net Amt';
         PostingDateCaptionLbl: label 'Posting Date';
         PymtAmtCaptionLbl: label 'Total Amount';
         PymtAmtNotAllocatedCaptionLbl: label 'Payment Amount Not Allocated';
         PymtAmtSpecCaptionLbl: label 'Payment Amount Specification';
         PymtTolInvCurrCaptionLbl: label 'Payment Tolerance';
         RcptNoCaptionLbl: label 'Receipt No. : ';
-        TDSAmtLbl: label 'TDS Amount';
+        TDSAmtLbl: label 'TDS Amt';
         Text003: label 'Payment Receipt';
         Text004: label 'Payment Advice';
         Text006: label 'Payment Discount Given';
@@ -683,6 +689,8 @@ report 50007 "E3 Vendor - Payment Advice"
         NetdecLineAmount: Decimal;
         decAppAmt: Decimal;
         DetailedVendorLedgEntry: Record "Detailed Vendor Ledg. Entry";
+        VLE: Record "Vendor Ledger Entry";
+        Docdate: Date;
 
 
     local procedure CurrencyCode(SrcCurrCode: Code[10]): Code[10]
